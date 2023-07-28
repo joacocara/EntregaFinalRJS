@@ -1,40 +1,41 @@
 import { useRef } from "react"
-import { useSearchParams } from 'react-router-dom'
+import { useSearchParams } from "react-router-dom"
+
 
 const Buscador = () => {
-    const [, setSearchParams] = useSearchParams()
+  const [searchParams, setSearchParams] = useSearchParams()
+  
+  const ref = useRef()
+  
+  const handldeSumbit = (e) => {
+    e.preventDefault()
+    const value = ref.current.value
 
-    const ref = useRef()
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        const value = ref.current.value
-
-        if (value === '') {
-            setSearchParams({})
-            return
-        }
-
-        setSearchParams({
-            search: value
-        })
+    if (value === '') {
+      setSearchParams({})
+      return
     }
 
-    const handleReset = () => {
-        setSearchParams({})
-    }
+    setSearchParams({
+      search: value
+    })
+  }
 
+  const handleReset = () => {
+    setSearchParams({})
+  }
+  
     return (
-        <form className="p-3" onSubmit={handleSubmit}>
-            <input
-                ref={ref}
-                className="form-control"
-                type="text"
-            />
-            <button type="submit" className="btn btn-light">Buscar</button>
-            <button onClick={handleReset} type="reset" className="btn btn-dark">X</button>
-        </form>
+      <form className="p-3" onSubmit={handldeSumbit}>
+        <input 
+        ref={ref}
+        className="form-control"
+         type="text" 
+         />
+         <button type="submmit" className="btn btn-primary">Buscar</button>
+         <button onClick={handleReset} type="reset" className="btn btn-light">X</button>
+      </form>
     )
-}
-
-export default Buscador
+  }
+  
+  export default Buscador
