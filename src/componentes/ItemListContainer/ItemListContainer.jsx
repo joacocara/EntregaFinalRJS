@@ -1,15 +1,24 @@
 import "./ItemListContainer.css"
 import ItemList from "../ItemList/ItemList"
-import { useProductos } from "../../hooks/useProductos"
+import { useEffect, useState } from "react"
+import { pedirDatos } from "../../helpers/pedirDatos"
 
 
 
 const ItemListContainer = () => {
 
-    const {productos, loading} = useProductos()
+    const [productos, setProductos] = useState([])
+    const [loading, setLoading] = useState(true)
 
-    console.log(loading, productos)
-    
+    useEffect(() => {
+        setLoading(true)
+
+        pedirDatos()
+            .then((res) => setProductos(res))
+            .catch((err) => console.log(err))
+            .finally(() => setLoading(false))
+    }, [])
+   
     return(
         <div className="list__container">
             {
