@@ -1,20 +1,34 @@
-import { useProductos } from "../../hooks/useProductos"
+import { useEffect } from "react"
+import useMobile from "../../hooks/useMobile"
 
 
 
 const Nosotros = () => {
-    const { productos} = useProductos()
+    const isMobile = useMobile()
 
-    console.log(productos)
+    const clickear = (e) => {
+        console.log(e)
+    }
+
+
+    useEffect(() => {
+        window.addEventListener(`click`, clickear) 
+
+        return () => {
+            window.removeEventListener(`click`, clickear )
+    }
+ 
+}, [])
 
     return(
         <div className="container my-5">
-            <h2>Nosotros</h2>
+            <h2 onClick={clickear}>Nosotros</h2>
             <hr />
 
             {
-                JSON.stringify(productos)
+                isMobile ? <h3>Estamos en mobile</h3> : <p>estamos en desk</p>
             }
+
         </div>
     )
 }
