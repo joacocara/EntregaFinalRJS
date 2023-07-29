@@ -6,16 +6,17 @@ import Nosotros from "./componentes/Nosotros/Nosotros"
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom"
 import Contacto from "./componentes/Contacto/Contacto"
 import ItemDetailContainer from "./componentes/ItemDetailContainer/ItemDetailContainer"
+import { CartProvider } from "./context/CartContext"
+import Cart from "./componentes/Cart/Cart"
 //import Error404 from "./componentes/Error404/Error404"
-import { MyContext } from "./context/MyContext"
+
 
 
 function App() {
-
   
 
   return(
-    <MyContext.Provider>
+    <CartProvider>
       <BrowserRouter>
           
           <Header />
@@ -26,12 +27,12 @@ function App() {
             <Route path="/detail/:itemId" element={<ItemDetailContainer />} />
             <Route path="/contacto" element={<Contacto />} />
             <Route path="/nosotros" element={<Nosotros />} />
+            <Route path="/cart" element={<Cart />} />
             <Route path="*" element={<Navigate to={"/"} /> } />  
           </Routes>
 
       </BrowserRouter>
-    </MyContext.Provider>
-
+    </CartProvider>
     
   )
 }
