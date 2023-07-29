@@ -4,6 +4,8 @@ import Buscador from "../../ejemplos/Buscador"
 import CartWidget from "../CartWidget/CartWidget"
 
 const Header = ({variant = false}) => {
+
+    
     return(
         <header className={variant ? "header header-v" : "header"}>
             <div className="header__container">

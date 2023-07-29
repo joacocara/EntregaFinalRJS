@@ -15,7 +15,7 @@ const ItemListContainer = () => {
     const search = searchParams.get("search")
 
     const {categoryId} = useParams()
-    console.log(categoryId)
+   
 
 
     useEffect(() => {
@@ -38,7 +38,7 @@ const ItemListContainer = () => {
                         : productos
    
     return(
-        <div className="list__container">
+        <div className="container my-5">
             {
                 loading
                     ? <h2>Cargando...</h2>

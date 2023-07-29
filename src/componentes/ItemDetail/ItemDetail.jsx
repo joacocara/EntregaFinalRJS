@@ -8,7 +8,7 @@ const ItemDetail = ({id, nombre, img, descripcion, category, precio, stock}) => 
 
     const { agregarAlCarrito, isInCart } = useContext(CartContext)
 
-    console.log( isInCart(id) )
+    
     const [ cantidad, setCantidad ] = useState(1)
     const navigate = useNavigate()
 
