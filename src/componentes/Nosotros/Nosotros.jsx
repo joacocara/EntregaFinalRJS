@@ -4,6 +4,8 @@ import useMobile from "../../hooks/useMobile"
 
 
 const Nosotros = () => {
+
+
     const isMobile = useMobile()
 
     const clickear = (e) => {
@@ -15,7 +17,7 @@ const Nosotros = () => {
         window.addEventListener(`click`, clickear) 
 
         return () => {
-            window.removeEventListener(`click`, clickear )
+            window.removeEventListener(`click`, clickear)
     }
  
 }, [])

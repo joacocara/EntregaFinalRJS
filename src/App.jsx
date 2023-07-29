@@ -7,13 +7,15 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom"
 import Contacto from "./componentes/Contacto/Contacto"
 import ItemDetailContainer from "./componentes/ItemDetailContainer/ItemDetailContainer"
 //import Error404 from "./componentes/Error404/Error404"
-
+import { MyContext } from "./context/MyContext"
 
 
 function App() {
 
+  
+
   return(
-    
+    <MyContext.Provider>
       <BrowserRouter>
           
           <Header />
@@ -24,11 +26,12 @@ function App() {
             <Route path="/detail/:itemId" element={<ItemDetailContainer />} />
             <Route path="/contacto" element={<Contacto />} />
             <Route path="/nosotros" element={<Nosotros />} />
-            <Route path="*" element={<Navigate to={"/"} /> } />
-            
-            
-        </Routes>
+            <Route path="*" element={<Navigate to={"/"} /> } />  
+          </Routes>
+
       </BrowserRouter>
+    </MyContext.Provider>
+
     
   )
 }
