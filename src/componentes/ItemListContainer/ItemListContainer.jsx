@@ -1,48 +1,46 @@
 import "./ItemListContainer.css"
 import ItemList from "../ItemList/ItemList"
 import { useEffect, useState } from "react"
-import { pedirDatos } from "../../helpers/pedirDatos"
 import { useParams } from "react-router-dom"
-import { useSearchParams } from "react-router-dom"
-
+import { collection, getDocs, query, where } from "firebase/firestore"
+import { db } from "../../firebase/config"
 
 const ItemListContainer = () => {
 
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
-    const [searchParams] = useSearchParams()
-
-    const search = searchParams.get("search")
+    console.log(productos)
 
     const {categoryId} = useParams()
    
 
-
     useEffect(() => {
         setLoading(true)
 
-        pedirDatos()
-            .then((res) => {
-                if (!categoryId){
-                    setProductos(res)
-                } else {
-                    setProductos( res.filter((item) => item.category === categoryId) )
-                }
+        // 1.- Armar una referencia (sync)
+        const productosRef = collection(db, "productos")
+        const q = categoryId
+                    ? query(productosRef, where("category", "==", categoryId))
+                    : productosRef
+        // 2.- peticion de esa referencia (async)
+        getDocs(q)
+            .then((resp) => {
+                const items = resp.docs.map((doc) =>({...doc.data(), id: doc.id}) )
+                setProductos(items)
             })
-            .catch((err) => console.log(err))
+            .catch(e => console.log(e))
             .finally(() => setLoading(false))
+
     }, [categoryId])
 
-    const listado = searchParams.get("search")
-                        ? productos.filter(prod => prod.nombre.includes(search))
-                        : productos
+
    
     return(
         <div className="container my-5">
             {
                 loading
                     ? <h2>Cargando...</h2>
-                    : <ItemList items={listado}/>
+                    : <ItemList items={productos}/>
             }
         </div>
     )
