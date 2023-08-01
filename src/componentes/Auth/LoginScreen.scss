@@ -1,0 +1,19 @@
+
+
+.auth-container {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../../../public/0_z6DBs7FzNFcMLWiU.jpg");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+    .auth-modal {
+        background-color: rgb(73, 56, 9);
+        padding: 20px;
+        width: 500px;
+        border-radius: 15px;
+        color: white;
+    }   
+}
