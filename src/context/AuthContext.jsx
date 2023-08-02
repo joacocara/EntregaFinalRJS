@@ -11,7 +11,6 @@ export const AuthContextProvider = ({children}) => {
         email: null
     })
 
-    console.log(user)
 
     const login = (values) => {
         signInWithEmailAndPassword(auth, values.email, values.password)
@@ -33,7 +32,6 @@ export const AuthContextProvider = ({children}) => {
 
     useEffect(() => {
         onAuthStateChanged(auth, (user)=> {
-            console.log(user)
             if(user) {
                 setUser({
                     logged: true, 
