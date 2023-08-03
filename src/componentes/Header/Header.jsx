@@ -22,7 +22,7 @@ const { user, logout} = useContext(AuthContext)
                 </nav>
                 <CartWidget />
             </div>
-            <Buscador />
+            {/*<Buscador />*/}
             <p>Bienvenido: {user.email}</p>
             <button className="btn btn-danger" onClick={logout}>Logout</button>
         </header>

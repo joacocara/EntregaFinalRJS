@@ -32,7 +32,7 @@ const Buscador = () => {
         className="form-control"
          type="text" 
          />
-         <button type="submmit" className="btn btn-primary">Buscar</button>
+         <button type="submit" className="btn btn-primary">Buscar</button>
          <button onClick={handleReset} type="reset" className="btn btn-light">X</button>
       </form>
     )
