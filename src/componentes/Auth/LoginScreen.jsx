@@ -50,7 +50,7 @@ const LoginScreen = () => {
                      />
 
                      <button className="btn btn-primary" type="submit">Iniciar sesión</button>
-                     <Link className="register-boton" style={{marginLeft: "240px"}} to="/register">Registrarme</Link>
+                     <Link className="register-boton" style={{marginLeft: "200px"}} to="/register">Registrarme</Link>
                 </form>
 
                 <button style={{marginTop: "20px", backgroundColor: "red", color: "white", borderRadius: "10px", height: "40px", width: "150px"}} onClick={googleLogin}>Iniciar con Google</button>

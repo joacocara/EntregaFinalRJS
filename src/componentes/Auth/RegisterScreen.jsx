@@ -51,7 +51,7 @@ const RegisterScreen = () => {
                      />
 
                      <button className="btn btn-primary" type="submit">Registrarse</button>
-                     <Link className="register-boton" style={{marginLeft: "200px"}} to="/login">Ya estoy registrado</Link>
+                     <Link className="register-boton" style={{marginLeft: "180px"}} to="/login">Ya estoy registrado</Link>
                 </form>
 
             </div>

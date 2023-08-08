@@ -14,8 +14,6 @@ const { user, logout} = useContext(AuthContext)
 
                 <nav className="header__nav">
                     <Link className="header__link" to="/">Inicio</Link>
-                    <Link className="header__link" to="/productos/ryzen">Ryzen</Link>
-                    <Link className="header__link" to="/productos/intel">Intel</Link>
                     <Link className="header__link" to="/contacto">Contacto</Link>
                     <Link className="header__link" to="/nosotros">Nosotros</Link>
                     <p className="usuario">{user.email}</p>
