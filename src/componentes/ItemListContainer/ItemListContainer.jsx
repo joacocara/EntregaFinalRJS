@@ -35,12 +35,14 @@ const ItemListContainer = () => {
 
    
     return(
-        <div className="container my-5">
-            {
-                loading
-                    ? <h2>Cargando...</h2>
-                    : <ItemList items={productos}/>
-            }
+        <div className="body">
+            <div className="container my-5">
+                {
+                    loading
+                        ? <h2>Cargando...</h2>
+                        : <ItemList items={productos}/>
+                }
+            </div>
         </div>
     )
 }

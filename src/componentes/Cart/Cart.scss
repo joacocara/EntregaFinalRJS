@@ -1,0 +1,22 @@
+.empty-cart {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .cart-item {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .cart-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .cart-total {
+    text-align: right;
+  }

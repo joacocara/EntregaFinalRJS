@@ -1,6 +1,5 @@
 import "./Header.scss"
 import { Link } from "react-router-dom"
-import Buscador from "../../ejemplos/Buscador"
 import CartWidget from "../CartWidget/CartWidget"
 import { useContext } from "react"
 import { AuthContext } from "../../context/AuthContext"
@@ -19,12 +18,11 @@ const { user, logout} = useContext(AuthContext)
                     <Link className="header__link" to="/productos/intel">Intel</Link>
                     <Link className="header__link" to="/contacto">Contacto</Link>
                     <Link className="header__link" to="/nosotros">Nosotros</Link>
+                    <p className="usuario">{user.email}</p>
+                    <button className="btn btn-info" onClick={logout}>Logout</button>
                 </nav>
                 <CartWidget />
             </div>
-            {/*<Buscador />*/}
-            <p>Bienvenido: {user.email}</p>
-            <button className="btn btn-danger" onClick={logout}>Logout</button>
         </header>
     )
 }

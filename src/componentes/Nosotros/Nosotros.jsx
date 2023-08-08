@@ -1,38 +1,25 @@
-import { useEffect } from "react"
-import useMobile from "../../hooks/useMobile"
-
+import "./Nosotros.scss"
 
 
 const Nosotros = () => {
 
 
-    const isMobile = useMobile()
-
-    const clickear = (e) => {
-        console.log(e)
-    }
-
-
-    useEffect(() => {
-        window.addEventListener(`click`, clickear) 
-
-        return () => {
-            window.removeEventListener(`click`, clickear)
-    }
- 
-}, [])
-
     return(
-        <div className="container my-5">
-            <h2 onClick={clickear}>Nosotros</h2>
-            <hr />
+        <div className="body">
+            <div className="container my-5">
+           
 
-            {
-                isMobile ? <h3>Estamos en mobile</h3> : <p>estamos en desk</p>
-            }
 
+            <h1 className="nh1">¿Quiénes somos?</h1>
+                <p className="txtnosotros">Somos una empresa que se encarga de la distribución de productos de las marcas AMD e INTEL, también trabajamos con empresas apartes pero únicamente con sus Notebooks.
+        
+          Lo venimos haciendo desde el 2010, y seguis creciendo para superarnos cada día más y para que a vos, te llegue todo lo mejor.
+                </p>
+            <img className="ryi"  src="/public/ryi.jpg" alt="" /> 
+            </div>
         </div>
-    )
+    )   
 }
 
 export default Nosotros
+

@@ -26,9 +26,9 @@ const LoginScreen = () => {
 
 
     return(
-        <div className="auth-container">
+        <div className="auth-container logeador">
             <div className="auth-modal">
-                <h2>Login</h2>
+                <h2>Log in</h2>
                 <hr />
 
                 <form onSubmit={handleSubmit}>
@@ -37,7 +37,7 @@ const LoginScreen = () => {
                     onChange={handleInputChange}
                     type="email"
                     placeholder="Email"
-                    className="form-control my-2"
+                    className="form-control my-5"
                     name="email"
                      />
                      <input 
@@ -45,15 +45,15 @@ const LoginScreen = () => {
                     onChange={handleInputChange}
                     type="password"
                     placeholder="contraseña"
-                    className="form-control my-2"
+                    className="form-control my-5"
                     name="password"
                      />
 
                      <button className="btn btn-primary" type="submit">Iniciar sesión</button>
-                     <Link to="/register">Registrarme</Link>
+                     <Link className="register-boton" style={{marginLeft: "240px"}} to="/register">Registrarme</Link>
                 </form>
 
-                <button className="btn btn-primary" onClick={googleLogin}>Iniciar con Google</button>
+                <button style={{marginTop: "20px", backgroundColor: "red", color: "white", borderRadius: "10px", height: "40px", width: "150px"}} onClick={googleLogin}>Iniciar con Google</button>
 
             </div>
         </div>

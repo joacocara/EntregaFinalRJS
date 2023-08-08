@@ -12,3 +12,11 @@
 .list__container p{
   font-size: 18px;
 }
+
+
+.body{
+  background-image: url("../../../public/nebulosa.jpg");
+  background-attachment: fixed;
+  overflow-x: hidden;
+  font-size: 16px;
+}

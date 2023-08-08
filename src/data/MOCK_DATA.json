@@ -40,7 +40,7 @@
         "nombre": "Intel i7 12",
         "descripcion": "Procesador de 3.9 Ghz",
         "precio": 80000,
-        "img": "/public/i7.png",
+        "img": "/public/i7p.png",
         "category": "intel",
         "stock": 8
     },

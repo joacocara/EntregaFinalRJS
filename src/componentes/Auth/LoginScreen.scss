@@ -10,10 +10,20 @@
     
 
     .auth-modal {
-        background-color: rgb(73, 56, 9);
+        background-color: rgb(245, 245, 245);
         padding: 20px;
         width: 500px;
+        height: 500px;
         border-radius: 15px;
-        color: white;
+        color: rgb(252, 0, 0);
+        background-image: url("../../../public/nebulosa.jpg");
     }   
+}
+
+.logeador{
+    width: auto;
+}
+.register-boton{
+    color: rgb(255, 0, 0);
+    font-size: 18px;
 }
