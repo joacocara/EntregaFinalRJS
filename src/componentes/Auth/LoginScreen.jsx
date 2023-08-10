@@ -32,20 +32,22 @@ const LoginScreen = () => {
                 <hr />
 
                 <form onSubmit={handleSubmit}>
+                    <p>ingresa tu correo</p>
                     <input 
                     value={values.email}
                     onChange={handleInputChange}
                     type="email"
                     placeholder="Email"
-                    className="form-control my-5"
+                    className="form-control my-3"
                     name="email"
                      />
+                     <p>ingresa tu contraseña</p>
                      <input 
                     value={values.password}
                     onChange={handleInputChange}
                     type="password"
                     placeholder="contraseña"
-                    className="form-control my-5"
+                    className="form-control my-3"
                     name="password"
                      />
 
